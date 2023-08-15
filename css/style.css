@@ -1,0 +1,190 @@
+@import url('https://fonts.cdnfonts.com/css/new-super-mario-font-u');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'New Super Mario Font U', sans-serif;
+}
+
+.game-menu {
+    width: 600px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    -webkit-text-stroke-width: 1.3px;
+    -webkit-text-stroke-color: #000;
+    position: absolute;
+}
+
+.game-menu .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-menu .title h1 {
+    color: #64b0ff;
+    font-size: 2.4em;
+    text-shadow: #000 0.1em 0.1em;
+}
+
+.game-menu .title .n1 {
+    color: #ea9e22;
+    top: -0.2em;
+    font-size: 6em;
+    position: relative;
+}
+
+.game-menu .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-menu .options .option {
+    background: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8em;
+    margin-bottom: 3px;
+}
+
+.game-menu .copyright {
+    color: #fff;
+    margin-top: 15px;
+    font-size: 1.3em;
+}
+
+.game-board {
+    width: 100vw;
+    height: 640px;
+    background: lightblue;
+    overflow: hidden;
+    position: relative;
+}
+
+.game-board .options {
+    display: none;
+    top: 12px;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
+.game-board .options .option {
+    background: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin-bottom: 3px;
+}
+
+.game-components {
+    overflow: hidden;
+}
+
+.clounds {
+    width: 350px;
+    bottom: 440px;
+    position: absolute;
+}
+
+.clounds-animation {
+    animation: clounds-animation 15s infinite linear;
+}
+
+.ground {
+    background-image: url(../img/ground.png);
+    background-size: contain;
+    background-position: 100%;
+    height: 60px;
+    width: 200vw;
+    animation: ground-animation 2.9s infinite linear;
+    position: relative;
+}
+
+.mario {
+    width: 80px;
+    left: 130px;
+    bottom: 0px;
+    position: absolute;
+}
+
+.mario.game-over {
+    width: 40px;
+    left: 155px;
+}
+
+.jump {
+    animation: mario-jump 500ms ease-out;
+}
+
+.pipe {
+    width: 43px;
+    bottom: 0px;
+    position: absolute;
+}
+
+.pipe-animation {
+    animation: pipe-animation 3s infinite linear;
+}
+
+.score {
+    top: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+}
+
+@keyframes clounds-animation {
+    from {
+        right: -350px;
+    }
+
+    to {
+        right: 100vw;
+    }
+}
+
+@keyframes ground-animation {
+    from {
+        right: 0px;
+    }
+
+    to {
+        right: 100vw;
+    }
+}
+
+@keyframes mario-jump {
+    0% {
+        bottom: 0px;
+    }
+
+    40%, 60% {
+        bottom: 75px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -43px;
+    }
+    to {
+        right: 100vw;
+    }
+}
